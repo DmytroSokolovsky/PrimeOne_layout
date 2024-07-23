@@ -1,0 +1,1154 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  src: url(../fonts/AkzidenzGrotesk-BoldCond.eot);
+  src: url(../fonts/AkzidenzGrotesk-BoldCond.eot?#iefix) format("embedded-opentype"), url(../fonts/AkzidenzGrotesk-BoldCond.otf) format("otf"), url(../fonts/AkzidenzGrotesk-BoldCond.svg#AkzidenzGrotesk-BoldCond) format("svg"), url(../fonts/AkzidenzGrotesk-BoldCond.ttf) format("truetype"), url(../fonts/AkzidenzGrotesk-BoldCond.woff) format("woff"), url(../fonts/AkzidenzGrotesk-BoldCond.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Bebas";
+  src: url(../fonts/Bebas-Regular.eot);
+  src: url(../fonts/Bebas-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Bebas-Regular.otf) format("otf"), url(../fonts/Bebas-Regular.svg#Bebas-Regular) format("svg"), url(../fonts/Bebas-Regular.ttf) format("truetype"), url(../fonts/Bebas-Regular.woff) format("woff"), url(../fonts/Bebas-Regular.woff2) format("woff2");
+}
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  padding: 34px 0 33px 0;
+  position: relative;
+  z-index: 20;
+}
+@media (max-width: 900px) {
+  .header {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 660px) {
+  .header:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 20;
+  }
+}
+.top-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 660px) {
+  .top-header {
+    position: relative;
+    z-index: 30;
+  }
+}
+.top-header__languages {
+  font-family: "Bebas";
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.top-header__lang {
+  margin: 0 10px 0 0;
+  padding: 5px;
+  color: #000000;
+}
+.top-header__lang:visited {
+  color: #000000;
+}
+.top-header__lang:last-child {
+  margin: 0;
+}
+.top-header__lang_black {
+  color: #ffffff;
+  background: #000;
+}
+.top-header__lang_black:visited {
+  color: #ffffff;
+}
+.top-header__ordering {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: underline;
+}
+
+.bottom-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -25px 0 0 0;
+}
+.bottom-header__burger {
+  min-width: 35px;
+  height: 20px;
+  position: relative;
+  display: none;
+}
+.bottom-header__burger.active span:first-child {
+  -webkit-transform: rotate(45deg) translate(5px, 8px);
+          transform: rotate(45deg) translate(5px, 8px);
+}
+.bottom-header__burger.active span:nth-child(2) {
+  scale: 0;
+}
+.bottom-header__burger.active span:last-child {
+  -webkit-transform: rotate(-45deg) translate(5px, -9px);
+          transform: rotate(-45deg) translate(5px, -9px);
+}
+@media (max-width: 660px) {
+  .bottom-header__burger {
+    display: block;
+    z-index: 30;
+  }
+}
+.bottom-header__burger span {
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: black;
+}
+.bottom-header__burger span:first-child {
+  top: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.bottom-header__burger span:nth-child(2) {
+  top: 50%;
+  scale: 1;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.bottom-header__burger span:last-child {
+  top: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.bottom-header__column_1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+.bottom-header__column_2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 212px;
+          flex: 0 0 212px;
+}
+@media (max-width: 660px) {
+  .bottom-header__column_2 {
+    z-index: 30;
+  }
+}
+@media (max-width: 900px) {
+  .bottom-header__column_2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 150px;
+            flex: 0 0 150px;
+  }
+}
+.bottom-header__column_3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+.bottom-header__text {
+  font-family: "Bebas";
+  font-size: 8px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  color: #000000;
+  text-align: center;
+}
+.bottom-header__image {
+  position: relative;
+  width: 212px;
+  height: 54px;
+}
+@media (max-width: 900px) {
+  .bottom-header__image {
+    width: 150px;
+  }
+}
+.bottom-header__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 660px) {
+  .left-header-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 134.33px;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    z-index: 5;
+    display: none;
+  }
+  .left-header-menu.active {
+    display: block;
+  }
+}
+.left-header-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 660px) {
+  .left-header-menu__list {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }
+}
+.left-header-menu__list li {
+  margin: 0 45px 0 0;
+}
+@media (max-width: 900px) {
+  .left-header-menu__list li {
+    margin: 0 20px 0 0;
+  }
+}
+.left-header-menu__list li:last-child {
+  margin: 0px 0px 0px 0px;
+}
+@media (max-width: 660px) {
+  .left-header-menu__list li {
+    margin: 0px 0px 10px 0px;
+  }
+  .left-header-menu__list li:first-child {
+    margin: 0px 0px 10px 0px;
+  }
+}
+.left-header-menu__link {
+  position: relative;
+  z-index: 100;
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.left-header-menu__link:visited {
+  color: #000000;
+}
+@media (max-width: 660px) {
+  .left-header-menu__link {
+    color: #fff;
+    font-size: 18px;
+  }
+  .left-header-menu__link:visited {
+    color: #fff;
+  }
+}
+
+@media (max-width: 660px) {
+  .right-header-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 134.33px;
+    left: 0;
+    display: none;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .right-header-menu.active {
+    display: block;
+  }
+}
+.right-header-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  pointer-events: all;
+}
+@media (max-width: 660px) {
+  .right-header-menu__list {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
+.right-header-menu__list li {
+  margin: 0px 0px 0px 53px;
+}
+@media (max-width: 900px) {
+  .right-header-menu__list li {
+    margin: 0 0 0 20px;
+  }
+}
+.right-header-menu__list li:first-child {
+  margin: 0px 0px 0px 0px;
+}
+@media (max-width: 660px) {
+  .right-header-menu__list li {
+    margin: 0px 0px 10px 0px;
+  }
+  .right-header-menu__list li:first-child {
+    margin: 0px 0px 10px 0px;
+  }
+}
+.right-header-menu__link {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.right-header-menu__link:visited {
+  color: #000000;
+}
+@media (max-width: 660px) {
+  .right-header-menu__link {
+    color: #fff;
+    font-size: 18px;
+  }
+  .right-header-menu__link:visited {
+    color: #fff;
+  }
+}
+
+.private {
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 600px) {
+  .private {
+    display: block;
+  }
+}
+.private_column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+.private__image {
+  position: relative;
+  height: 425px;
+}
+@media (max-width: 600px) {
+  .private__image {
+    height: 250px;
+  }
+}
+.private__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.private__body {
+  padding: 82px 0 0 62px;
+  max-width: 380px;
+}
+@media (max-width: 767.98px) {
+  .private__body {
+    padding: 30px 10px 0 20px;
+  }
+}
+@media (max-width: 600px) {
+  .private__body {
+    padding: 20px 10px;
+  }
+}
+.private__title {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0 0 37px 0;
+}
+@media (max-width: 767.98px) {
+  .private__title {
+    font-size: 32px;
+    margin: 0 0 15px 0;
+  }
+}
+.private__text {
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  margin: 0 0 55px 0;
+}
+@media (max-width: 600px) {
+  .private__text {
+    margin: 0 0 20px 0;
+  }
+}
+.private__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.private__button {
+  background-color: #ffffff;
+  margin: 0 14px 0 0;
+  padding: 18px 34px;
+}
+@media (max-width: 767.98px) {
+  .private__button {
+    padding: 8px 16px;
+  }
+}
+.private__button span {
+  font-family: "Bebas";
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  font-weight: 700;
+}
+.private__link {
+  font-family: "Bebas";
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fffffe;
+}
+
+.content {
+  padding: 75px 0 79px 0;
+}
+@media (max-width: 992.98px) {
+  .content {
+    padding: 30px 0;
+  }
+}
+.content__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 767.98px) {
+  .content__items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 -20px;
+    row-gap: 30px;
+  }
+}
+@media (max-width: 479.98px) {
+  .content__items {
+    margin: 0 -10px;
+  }
+}
+.content__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (max-width: 767.98px) {
+  .content__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 479.98px) {
+  .content__item {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 400px) {
+  .content__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.content__image {
+  position: relative;
+  padding-bottom: 102.3%;
+  margin: 0px 0px 25px 0px;
+}
+@media (max-width: 767.98px) {
+  .content__image {
+    padding-bottom: 90%;
+  }
+}
+.content__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin-left: 5px;
+}
+.content__title {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 25px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  margin: 0 0 36px 0;
+}
+@media (max-width: 767.98px) {
+  .content__title {
+    margin: 0 0 15px 0;
+  }
+}
+.content__text {
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0 0 32px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 188px;
+}
+@media (max-width: 767.98px) {
+  .content__text {
+    max-width: none;
+    margin: 0 0 15px 0;
+  }
+}
+.content__button {
+  background-color: #000000;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 18px 34px;
+  margin: 0 0 29px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 767.98px) {
+  .content__button {
+    padding: 10px 18px;
+    margin: 0 0 15px 0;
+  }
+}
+.content__button span {
+  color: #ffffff;
+  font-family: Bebas;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.content__link {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: Bebas;
+  font-size: 15px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+
+.why__bottom {
+  padding: 50px 0 0 0;
+}
+@media (max-width: 600px) {
+  .why__bottom {
+    padding: 20px 0 1px 0;
+  }
+}
+
+.header-why {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 479.98px) {
+  .header-why {
+    display: block;
+  }
+}
+.header-why__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  background: #000;
+  font-size: 50px;
+  color: #ffffff;
+  text-align: right;
+  padding: 57px 60px 57px;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 992.98px) {
+  .header-why__text {
+    font-size: 36px;
+    padding: 35px 40px 35px;
+  }
+}
+@media (max-width: 479.98px) {
+  .header-why__text {
+    font-size: 28px;
+  }
+}
+.header-why__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  position: relative;
+}
+@media (max-width: 479.98px) {
+  .header-why__image {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    height: 98px;
+  }
+}
+.header-why__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.bottom-why {
+  background-color: #ebebeb;
+}
+.bottom-why__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+}
+@media (max-width: 600px) {
+  .bottom-why__items {
+    display: block;
+  }
+}
+.bottom-why__col {
+  padding: 0 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin: 0px 0px 50px 0px;
+}
+@media (max-width: 600px) {
+  .bottom-why__col {
+    margin: 0px 0px 20px 0px;
+  }
+}
+.bottom-why__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -6px;
+}
+.bottom-why__column {
+  padding: 0 6px;
+}
+.bottom-why__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.bottom-why__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 25px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.bottom-why__text {
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.hello {
+  padding: 82px 0 28px 0;
+}
+@media (max-width: 992.98px) {
+  .hello {
+    padding: 25px 0;
+  }
+}
+@media (max-width: 650px) {
+  .hello__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.hello__title {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  margin: 0 0 39px 0;
+}
+@media (max-width: 992.98px) {
+  .hello__title {
+    font-size: 32px;
+    margin: 0 0 20px 0;
+  }
+}
+.hello__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 650px) {
+  .hello__body {
+    display: block;
+  }
+}
+.hello__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+@media (max-width: 650px) {
+  .hello__column {
+    margin: 0px 0px 15px 0px;
+  }
+}
+.hello__item_1 {
+  background: url("../img/hello/hello_1.png") left no-repeat;
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 27px;
+  color: #000000;
+  padding: 0 0 0 30px;
+  margin: 0 0 35px 0;
+}
+@media (max-width: 992.98px) {
+  .hello__item_1 {
+    margin: 0 0 15px 0;
+  }
+}
+.hello__item_2 {
+  background: url("../img/hello/hello_3.png") left no-repeat;
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 27px;
+  color: #000000;
+  padding: 0 0 0 30px;
+}
+.hello__item_3 {
+  background: url("../img/hello/hello_2.png") left no-repeat;
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 27px;
+  color: #000000;
+  padding: 0 0 0 40px;
+  margin: 0 0 35px 0;
+}
+@media (max-width: 992.98px) {
+  .hello__item_3 {
+    margin: 0 0 15px 0;
+  }
+}
+
+.hello-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.hello-social__link {
+  margin: 0px 30px 0px 0px;
+}
+
+.touch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 992.98px) {
+  .touch {
+    display: block;
+  }
+}
+.touch__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+.touch__map {
+  position: relative;
+  padding-bottom: 69.55%;
+}
+@media (max-width: 992.98px) {
+  .touch__map {
+    padding-bottom: 50%;
+  }
+}
+.touch__map iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.touch__form {
+  height: 100%;
+  background-color: #000000;
+  padding: 60px 0 0 54px;
+}
+@media (max-width: 1366px) {
+  .touch__form {
+    padding: 30px 0 0 54px;
+  }
+}
+@media (max-width: 992.98px) {
+  .touch__form {
+    padding: 20px 0 20px 54px;
+  }
+}
+@media (max-width: 479.98px) {
+  .touch__form {
+    padding: 20px 40px;
+  }
+}
+
+.form-touch__body {
+  max-width: 374px;
+}
+@media (max-width: 479.98px) {
+  .form-touch__body {
+    width: 100%;
+  }
+}
+.form-touch__title {
+  font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0px 0px 28px 0px;
+}
+@media (max-width: 1280px) {
+  .form-touch__title {
+    margin: 0px 0px 15px 0px;
+  }
+}
+@media (max-width: 1050px) {
+  .form-touch__title {
+    font-size: 18px;
+    margin: 0px 0px 10px 0px;
+  }
+}
+.form-touch__line {
+  margin: 0px 0px 25px 0px;
+  height: 48px;
+}
+@media (max-width: 1280px) {
+  .form-touch__line {
+    margin: 0px 0px 10px 0px;
+  }
+}
+@media (max-width: 1050px) {
+  .form-touch__line {
+    height: 42px;
+  }
+}
+.form-touch__line input,
+.form-touch__line textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  border: 2px solid #959595;
+  padding: 0 15px;
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__line input::-webkit-input-placeholder, .form-touch__line textarea::-webkit-input-placeholder {
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__line input::-moz-placeholder, .form-touch__line textarea::-moz-placeholder {
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__line input:-ms-input-placeholder, .form-touch__line textarea:-ms-input-placeholder {
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__line input::-ms-input-placeholder, .form-touch__line textarea::-ms-input-placeholder {
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__line input::placeholder,
+.form-touch__line textarea::placeholder {
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  color: #959595;
+}
+.form-touch__message {
+  height: 100px;
+}
+.form-touch__message textarea {
+  padding: 12px 15px;
+  resize: none;
+}
+.form-touch__button button span {
+  display: block;
+  font-family: "Bebas";
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  padding: 18px 22px;
+}
+@media (max-width: 1280px) {
+  .form-touch__button button span {
+    padding: 10px 12px;
+  }
+}
+@media (max-width: 1050px) {
+  .form-touch__button button span {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+}
+
+.footer {
+  padding: 44px 0;
+}
+@media (max-width: 992.98px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 580px) {
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.footer__copyright {
+  font-family: "PT Sans";
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #4d4d4d;
+}
+@media (max-width: 580px) {
+  .footer__copyright {
+    margin: 0px 0px 15px 0px;
+  }
+}
+.footer__copyright span {
+  text-decoration: underline;
+}
+@media (max-width: 479.98px) {
+  .footer__copyright span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.footer__logo {
+  position: relative;
+  width: 156px;
+  height: 39px;
+}
+.footer__logo img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
